@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Fletes por Factura</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚚 Validador de Fletes</h1>
+    <p class="subtitle">Calcula el porcentaje de flete respecto al valor de tu factura</p>
+
+    <!-- SECTION 1: Upload -->
+    <div class="card" id="section-upload">
+      <h2>1. Subir Archivo</h2>
+      <input type="file" id="fileInput" accept=".pdf">
+      <button id="btnUpload">Subir Archivo</button>
+      <div id="uploadMessage" class="message"></div>
+    </div>
+
+    <!-- SECTION 2: Select Invoice -->
+    <div class="card hidden" id="section-select">
+      <h2>2. Seleccionar Factura</h2>
+      <select id="invoiceSelect">
+        <option value="">-- Selecciona una factura --</option>
+      </select>
+      <div id="invoiceDetails" class="invoice-details hidden"></div>
+    </div>
+
+    <!-- SECTION 3: Calculate -->
+    <div class="card hidden" id="section-calculate">
+      <h2>3. Ingresa el Valor del Flete</h2>
+      <input type="number" id="freightInput" placeholder="Valor del flete" min="0" step="0.01">
+      <button id="btnCalculate">Calcular</button>
+      <div id="calculateMessage" class="message"></div>
+    </div>
+
+    <!-- SECTION 4: Result -->
+    <div class="card hidden" id="section-result">
+      <h2>Resultado</h2>
+      <div id="resultContent"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
