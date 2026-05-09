@@ -92,6 +92,11 @@ async function uploadFile() {
 
       if (numeros && numeros.length) {
         valorFactura = numeros[7]; 
+        if(numeros[7] < numeros[6]) {
+          valorFactura = numeros[6];
+        }else {
+          valorFactura = numeros[7];
+        }
       }
     }
 
